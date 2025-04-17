@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Core</ProjectName>
+    <ProjectGuid>{1B482D44-6893-42E7-ADF6-E497E4FCE916}</ProjectGuid>
+    <RootNamespace>Tmpl8</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <!-- Custom section, because microsoft can't keep this organised -->
+  <PropertyGroup>
+    <!-- Note that Platform and Configuration have been flipped around (when compared to the default).
+         This allows precompiled binaries for the choosen $(Platform) to be placed in that directory once,
+         without duplication for Debug/Release. Intermediate files are still placed in the appropriate
+         subdirectory.
+         The debug binary is postfixed with _debug to prevent clashes with it's Release counterpart
+         for the same Platform. -->
+    <OutDir>$(ProjectDir)$(Platform)\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\</IntDir>
+    <MultiProcessorCompilation>true</MultiProcessorCompilation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <TargetName>$(ProjectName)_debug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\template;.;..\lib;..\lib\imgui;..\lib\glad;..\lib\glfw\include;..\lib\OpenCL\inc;..\lib\zlib;..\lib\glm;..\lib\assimp;..\lib\bullet;..\lib\glm-master;..\lib\Audio\inc</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenCL.lib;OpenGL32.lib;libz-static.lib;assimp-vc143-mt.lib;LinearMath.lib;BulletSoftBody.lib;BulletDynamics.lib;BulletCollision.lib;Audio.lib</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <Link>
+      <AdditionalLibraryDirectories>../lib/glfw/lib-vc2022;../lib/zlib;../lib/OpenCL/lib;../lib/assimp/lib;../lib/Audio/lib/Release;../lib/bullet/lib/$(Configuration)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <!-- NOTE: Only Release-x64 has WIN64 defined... -->
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdcpp17</LanguageStandard>
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</OpenMPSupport>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Default</InlineFunctionExpansion>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</IntrinsicFunctions>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Neither</FavorSizeOrSpeed>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <BrowseInformation>
+      </BrowseInformation>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <ControlFlowGuard>false</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <!-- END Custom section -->
+  <ItemGroup>
+    <ClCompile Include="..\lib\imgui\imgui.cpp" />
+    <ClCompile Include="..\lib\imgui\imgui_demo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\lib\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\lib\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\lib\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\lib\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\template\opengl.cpp" />
+    <ClCompile Include="..\template\surface.cpp" />
+    <ClCompile Include="..\template\template.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\template\tmpl8math.cpp" />
+    <ClCompile Include="AreaLight.cpp" />
+    <ClCompile Include="BRDF.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CollisionInfo.cpp" />
+    <ClCompile Include="ContactCallback.cpp" />
+    <ClCompile Include="DebugDrawer.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="LightTransform.cpp" />
+    <ClCompile Include="PhysicsObject.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="ShaderClass.cpp" />
+    <ClCompile Include="SpotLight.cpp" />
+    <ClCompile Include="tinyBVH.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="Trigger.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\imgui\imconfig.h" />
+    <ClInclude Include="..\lib\imgui\imgui.h" />
+    <ClInclude Include="..\lib\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="..\lib\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\lib\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="..\lib\imgui\imgui_internal.h" />
+    <ClInclude Include="..\lib\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\lib\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\lib\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\template\common.h" />
+    <ClInclude Include="..\template\opengl.h" />
+    <ClInclude Include="..\template\precomp.h" />
+    <ClInclude Include="..\template\surface.h" />
+    <ClInclude Include="..\template\tmpl8math.h" />
+    <ClInclude Include="AreaLight.h" />
+    <ClInclude Include="BRDF.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CollisionInfo.h" />
+    <ClInclude Include="ContactCallback.h" />
+    <ClInclude Include="DebugDrawer.h" />
+    <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="LightTransform.h" />
+    <ClInclude Include="PhysicsObject.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="PointLight.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="ShaderClass.h" />
+    <ClInclude Include="SpotLight.h" />
+    <ClInclude Include="tinyBVH.h" />
+    <ClInclude Include="tiny_bvh.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="Trigger.h" />
+    <ClInclude Include="UserInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\template\LICENSE" />
+    <None Include="fDebug.glsl" />
+    <None Include="vDebug.glsl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

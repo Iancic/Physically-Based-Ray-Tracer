@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\template\template.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui.cpp">
+      <Filter>Template\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui_demo.cpp">
+      <Filter>Template\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui_draw.cpp">
+      <Filter>Template\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui_impl_glfw.cpp">
+      <Filter>Template\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Template\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui_tables.cpp">
+      <Filter>Template\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\imgui\imgui_widgets.cpp">
+      <Filter>Template\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\template\opengl.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="..\template\surface.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="..\template\tmpl8math.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="SpotLight.cpp">
+      <Filter>Renderer\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLight.cpp">
+      <Filter>Renderer\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionalLight.cpp">
+      <Filter>Renderer\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="AreaLight.cpp">
+      <Filter>Renderer\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Renderer\Model\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Renderer\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Renderer\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="LightTransform.cpp">
+      <Filter>Renderer\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="BRDF.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionInfo.cpp">
+      <Filter>Renderer\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactCallback.cpp">
+      <Filter>Renderer\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDrawer.cpp">
+      <Filter>Renderer\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderClass.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Trigger.cpp">
+      <Filter>Renderer\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyBVH.cpp">
+      <Filter>Renderer\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsObject.cpp">
+      <Filter>Renderer\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Renderer\Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\template\common.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\template\precomp.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imconfig.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imgui.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imgui_impl_glfw.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imgui_impl_opengl3.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imgui_internal.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imstb_rectpack.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imstb_textedit.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\imgui\imstb_truetype.h">
+      <Filter>Template\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\template\opengl.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\template\surface.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\template\tmpl8math.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="SpotLight.h">
+      <Filter>Renderer\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>Renderer\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>Renderer\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="AreaLight.h">
+      <Filter>Renderer\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Renderer\Model\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="tiny_bvh.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Renderer\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Renderer\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="LightTransform.h">
+      <Filter>Renderer\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="BRDF.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionInfo.h">
+      <Filter>Renderer\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactCallback.h">
+      <Filter>Renderer\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDrawer.h">
+      <Filter>Renderer\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderClass.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger.h">
+      <Filter>Renderer\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyBVH.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsObject.h">
+      <Filter>Renderer\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Renderer\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\template\LICENSE">
+      <Filter>Template</Filter>
+    </None>
+    <None Include="fDebug.glsl">
+      <Filter>Renderer\Physics</Filter>
+    </None>
+    <None Include="vDebug.glsl">
+      <Filter>Renderer\Physics</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Template">
+      <UniqueIdentifier>{a7d6e3cb-bfcd-438d-979f-17df241a55b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template\imgui">
+      <UniqueIdentifier>{b1e7f5d5-23d5-4fa2-8854-9a94fb160820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{8c282401-33d0-421d-b9de-03f3a66313bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Core">
+      <UniqueIdentifier>{a344bf3c-2814-4661-bb1f-42ba80fca051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Lights">
+      <UniqueIdentifier>{40c94d3e-d112-4f3f-8588-56151250c321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template\tiny">
+      <UniqueIdentifier>{c69b7fd7-44ff-4876-8e90-977ecdb4f542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Model">
+      <UniqueIdentifier>{3a58d54d-62f0-4790-a986-da96f98063fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Model\Materials">
+      <UniqueIdentifier>{3c8273cc-a43b-4f34-960f-a9905b1d34cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Physics">
+      <UniqueIdentifier>{00de67a8-c80d-4457-b9df-e46ebc266f2c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

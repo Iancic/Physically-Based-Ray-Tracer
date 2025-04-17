@@ -1,1 +1,2 @@
 # CCTracer
+CCTracer is a CPU-based raytracing engine written in C++ that supports physically based rendering for models and lighting, while utilizing Bullet physics to create gameplay. The engine was used to develop a pinball game.
