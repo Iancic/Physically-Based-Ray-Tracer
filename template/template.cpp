@@ -91,15 +91,15 @@ void main()
 	glfwWindowHint( GLFW_STENCIL_BITS, GL_FALSE );
 	glfwWindowHint( GLFW_RESIZABLE, GL_FALSE /* easier :) */ );
 #ifdef FULLSCREEN
-	window = glfwCreateWindow( SCRWIDTH, SCRHEIGHT, "Pinball", glfwGetPrimaryMonitor(), 0 );
+	window = glfwCreateWindow( SCRWIDTH, SCRHEIGHT, "Renderer Editor", glfwGetPrimaryMonitor(), 0 );
 #else
 #ifdef DOUBLESIZE
-	window = glfwCreateWindow( SCRWIDTH * 2, SCRHEIGHT * 2, "Pinball", 0, 0 );
+	window = glfwCreateWindow( SCRWIDTH * 2, SCRHEIGHT * 2, "Renderer Editor", 0, 0 );
 #else
 	#if GAMETYPE == GAME
-		window = glfwCreateWindow( SCRWIDTH * UPSCALE, SCRHEIGHT * UPSCALE, "Pinball", 0, 0 );
+		window = glfwCreateWindow( SCRWIDTH * UPSCALE, SCRHEIGHT * UPSCALE, "Renderer Editor", 0, 0 );
 	#else
-		window = glfwCreateWindow( SCRWIDTH, SCRHEIGHT, "Pinball", 0, 0);
+		window = glfwCreateWindow( SCRWIDTH, SCRHEIGHT, "Renderer Editor", 0, 0);
 	#endif
 #endif
 #endif
